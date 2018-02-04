@@ -60,7 +60,6 @@
       </logicalFolder>
       <itemPath>src/Storage/FixedSizeSharedMemTable.cpp</itemPath>
       <itemPath>inc/Storage/FixedSizeSharedMemTable.h</itemPath>
-      <itemPath>inc/Storage/NoHashT.h</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -160,8 +159,6 @@
       <item path="inc/Storage/KVStorageFactory.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="inc/Storage/LevelStorage.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="inc/Storage/NoHashT.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="inc/Storage/RemoteKVStorage.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -336,8 +333,6 @@
       <item path="inc/Storage/KVStorageFactory.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="inc/Storage/LevelStorage.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="inc/Storage/NoHashT.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="inc/Storage/RemoteKVStorage.h" ex="false" tool="3" flavor2="0">
       </item>

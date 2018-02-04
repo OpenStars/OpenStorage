@@ -20,33 +20,32 @@
             <file>file:/data/data/workspace_2015/corelibs/UPStorage/SampleStorage.txt</file>
         </group>
         <group name="Trades">
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/LevelStorage.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/SimpleKCStorage.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/SimpleKCStorage.cpp</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/thrift/kv.thrift</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/RemoteKVStorage.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/DistributedStorage.cpp</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/thrift/gen-cpp/RawBigSetKVService.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/SimpleLevelStorage.cpp</file>
             <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/KVStorageFactory.cpp</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/SharedMemStorage.cpp</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/KCStorage.cpp</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/thrift/bskv.thrift</file>
             <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/SharedMemStorage.h</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/thrift/thriftgen.sh</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/SimpleKCStorage.cpp</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/SimpleLevelStorage.h</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/SimpleKCStorage.h</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/KCStorage.cpp</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/KVStorageFactory.h</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/FixedSizeSharedMemTable.cpp</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/DistributedStorage.h</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/thrift/kv.thrift</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/SimpleLevelStorage.cpp</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/RemoteKVStorage.cpp</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/SampleStorage.txt</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/LevelStorage.h</file>
             <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/BigsetRemoteKV.cpp</file>
             <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/FixedSizeSharedMemTable.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/SampleStorage.txt</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/RemoteKVStorage.cpp</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/DistributedStorage.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/LevelStorage.cpp</file>
             <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/KCStorage.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/FixedSizeSharedMemTable.cpp</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/RemoteKVStorage.h</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/DistributedStorage.cpp</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/SharedMemStorage.cpp</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/LevelStorage.cpp</file>
             <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/thrift/gen-cpp/bskv_types.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/thrift/bskv.thrift</file>
             <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/BigsetRemoteKV.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/thrift/thriftgen.sh</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/SimpleLevelStorage.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/KVStorageFactory.h</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/NoHashT.h</file>
+            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/thrift/gen-cpp/RawBigSetKVService.h</file>
         </group>
     </open-files>
 </project-private>

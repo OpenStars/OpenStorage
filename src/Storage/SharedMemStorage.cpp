@@ -7,7 +7,7 @@
 
 #include "Storage/SharedMemStorage.h"
 #include "Storage/FixedSizeSharedMemTable.h"
-#include "Storage/NoHashT.h"
+#include "Hashing/NoHashT.h"
 
 #include "Poco/File.h"
 #include "Poco/Types.h"
