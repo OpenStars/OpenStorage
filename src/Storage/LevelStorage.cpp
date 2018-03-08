@@ -82,8 +82,9 @@ bool LevelStorage::open() {
 	aFile.createDirectories();
 	
 	for (int i = 0; i < _numParts; ++i) {
-		std::string kcPath = _path + "/" + _baseName + "_" + Poco::NumberFormatter::format0(i, 3);
-		_dbParts[i] = new SimpleLevelStorage(kcPath);
+		std::string dbPath = _path + "/" + _baseName + "_" + Poco::NumberFormatter::format0(i, 3);
+		_dbParts[i] = new SimpleLevelStorage(dbPath);
+                _dbParts[i]->setOption(_dbOptions);
 	}		
 	for (int i = 0; i < _numParts; ++i) {
 		ret = ret && _dbParts[i]->open();

@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Storage/KVStorageFactory.o \
 	${OBJECTDIR}/src/Storage/LevelStorage.o \
 	${OBJECTDIR}/src/Storage/RemoteKVStorage.o \
+	${OBJECTDIR}/src/Storage/RocksDBStorage.o \
 	${OBJECTDIR}/src/Storage/SharedMemStorage.o \
 	${OBJECTDIR}/src/Storage/SimpleKCStorage.o \
 	${OBJECTDIR}/src/Storage/SimpleLevelStorage.o \
@@ -123,6 +124,11 @@ ${OBJECTDIR}/src/Storage/RemoteKVStorage.o: src/Storage/RemoteKVStorage.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/Storage
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX -DTHREADED -D_GNU_SOURCE -Iinc -I../../contribs/LibEvent/include -I../../contribs/Boost/include -I../../contribs/Poco/include -I../../contribs/ApacheThrift/include -I../../contribs/SpecialContribs/include -Ithrift/gen-cpp -I../../contribs/SpecialContribs/src/hashkit -I../../contribs/SpecialContribs/src/libstatgrab -I../../contribs/SpecialContribs/include/kyotocabinet -I../../contribs/SpecialContribs/include/leveldb -I../../contribs/SpecialContribs/src/ -I../../corelibs/BaseFoundation/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Storage/RemoteKVStorage.o src/Storage/RemoteKVStorage.cpp
+
+${OBJECTDIR}/src/Storage/RocksDBStorage.o: src/Storage/RocksDBStorage.cpp
+	${MKDIR} -p ${OBJECTDIR}/src/Storage
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX -DTHREADED -D_GNU_SOURCE -Iinc -I../../contribs/LibEvent/include -I../../contribs/Boost/include -I../../contribs/Poco/include -I../../contribs/ApacheThrift/include -I../../contribs/SpecialContribs/include -Ithrift/gen-cpp -I../../contribs/SpecialContribs/src/hashkit -I../../contribs/SpecialContribs/src/libstatgrab -I../../contribs/SpecialContribs/include/kyotocabinet -I../../contribs/SpecialContribs/include/leveldb -I../../contribs/SpecialContribs/src/ -I../../corelibs/BaseFoundation/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Storage/RocksDBStorage.o src/Storage/RocksDBStorage.cpp
 
 ${OBJECTDIR}/src/Storage/SharedMemStorage.o: src/Storage/SharedMemStorage.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/Storage
@@ -276,6 +282,19 @@ ${OBJECTDIR}/src/Storage/RemoteKVStorage_nomain.o: ${OBJECTDIR}/src/Storage/Remo
 	    $(COMPILE.cc) -g -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX -DTHREADED -D_GNU_SOURCE -Iinc -I../../contribs/LibEvent/include -I../../contribs/Boost/include -I../../contribs/Poco/include -I../../contribs/ApacheThrift/include -I../../contribs/SpecialContribs/include -Ithrift/gen-cpp -I../../contribs/SpecialContribs/src/hashkit -I../../contribs/SpecialContribs/src/libstatgrab -I../../contribs/SpecialContribs/include/kyotocabinet -I../../contribs/SpecialContribs/include/leveldb -I../../contribs/SpecialContribs/src/ -I../../corelibs/BaseFoundation/include -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Storage/RemoteKVStorage_nomain.o src/Storage/RemoteKVStorage.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/src/Storage/RemoteKVStorage.o ${OBJECTDIR}/src/Storage/RemoteKVStorage_nomain.o;\
+	fi
+
+${OBJECTDIR}/src/Storage/RocksDBStorage_nomain.o: ${OBJECTDIR}/src/Storage/RocksDBStorage.o src/Storage/RocksDBStorage.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Storage
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/Storage/RocksDBStorage.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -g -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX -DTHREADED -D_GNU_SOURCE -Iinc -I../../contribs/LibEvent/include -I../../contribs/Boost/include -I../../contribs/Poco/include -I../../contribs/ApacheThrift/include -I../../contribs/SpecialContribs/include -Ithrift/gen-cpp -I../../contribs/SpecialContribs/src/hashkit -I../../contribs/SpecialContribs/src/libstatgrab -I../../contribs/SpecialContribs/include/kyotocabinet -I../../contribs/SpecialContribs/include/leveldb -I../../contribs/SpecialContribs/src/ -I../../corelibs/BaseFoundation/include -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Storage/RocksDBStorage_nomain.o src/Storage/RocksDBStorage.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/src/Storage/RocksDBStorage.o ${OBJECTDIR}/src/Storage/RocksDBStorage_nomain.o;\
 	fi
 
 ${OBJECTDIR}/src/Storage/SharedMemStorage_nomain.o: ${OBJECTDIR}/src/Storage/SharedMemStorage.o src/Storage/SharedMemStorage.cpp 

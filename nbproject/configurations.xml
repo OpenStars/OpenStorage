@@ -20,6 +20,8 @@
           <itemPath>inc/Storage/KCStorage.h</itemPath>
           <itemPath>src/Storage/LevelStorage.cpp</itemPath>
           <itemPath>inc/Storage/LevelStorage.h</itemPath>
+          <itemPath>src/Storage/RocksDBStorage.cpp</itemPath>
+          <itemPath>inc/Storage/RocksDBStorage.h</itemPath>
           <itemPath>src/Storage/SimpleKCStorage.cpp</itemPath>
           <itemPath>inc/Storage/SimpleKCStorage.h</itemPath>
           <itemPath>src/Storage/SimpleLevelStorage.cpp</itemPath>
@@ -162,6 +164,8 @@
       </item>
       <item path="inc/Storage/RemoteKVStorage.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="inc/Storage/RocksDBStorage.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="inc/Storage/SharedMemStorage.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="inc/Storage/SimpleKCStorage.h" ex="false" tool="3" flavor2="0">
@@ -184,6 +188,8 @@
       <item path="src/Storage/LevelStorage.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Storage/RemoteKVStorage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Storage/RocksDBStorage.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Storage/SharedMemStorage.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -336,6 +342,8 @@
       </item>
       <item path="inc/Storage/RemoteKVStorage.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="inc/Storage/RocksDBStorage.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="inc/Storage/SharedMemStorage.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="inc/Storage/SimpleKCStorage.h" ex="false" tool="3" flavor2="0">
@@ -358,6 +366,8 @@
       <item path="src/Storage/LevelStorage.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Storage/RemoteKVStorage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Storage/RocksDBStorage.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Storage/SharedMemStorage.cpp" ex="false" tool="1" flavor2="0">
       </item>

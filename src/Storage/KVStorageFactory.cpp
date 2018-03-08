@@ -27,6 +27,7 @@
 #include "Poco/StringTokenizer.h"
 #include "Poco/NumberParser.h"
 #include "Poco/SharedPtr.h"
+#include "Storage/RocksDBStorage.h"
 
 
 #include <map>
@@ -277,8 +278,13 @@ public:
 		openstars::storage::LevelStorage* aDb = new openstars::storage::LevelStorage(aOptions);
         aDb->open();
 		return aDb;
-	}
-
+    }
+    
+    static openstars::storage::AbstractKVStorage* createRocksdbStorage(const std::string & aOptions){
+		openstars::storage::RocksDBStorage* aDb = new openstars::storage::RocksDBStorage(aOptions);
+        aDb->open();
+		return aDb;
+    }
     
     static openstars::distributed::BackendManager* getBackendManager(const std::string& zkServer,
 	const std::string& zkBasePath,
@@ -477,6 +483,10 @@ openstars::storage::AbstractKVStorage* KVStorageFactory::createStorage(const std
         return KVStorageFactoryImpl::createLevelStorage(creatingOption);
     }
     
+    if (aType == "rocksdb"){
+        return KVStorageFactoryImpl::createRocksdbStorage(creatingOption);
+    }
+        
     if (aType == "distributed")
 	return KVStorageFactoryImpl::createDistributed(aMap);
 

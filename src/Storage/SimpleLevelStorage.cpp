@@ -12,7 +12,7 @@ using namespace Poco;
 namespace openstars { namespace storage {
 	
 SimpleLevelStorage::SimpleLevelStorage(const std::string& path)
-: _path(path), _db(NULL), _isOpen(false)
+: _path(path), _db(nullptr), _isOpen(false)
 {		
 }
 SimpleLevelStorage::~SimpleLevelStorage() {
@@ -181,16 +181,7 @@ int32_t SimpleLevelStorage::_put(const void* inKeyData, const int& keyLen,
 	leveldb::Slice value((const char*)inData, datalen);
 	leveldb::Status s;
         s = _db->Put(leveldb::WriteOptions(), key, value);
-//	if (trans.isNull()) {
-//		
-//	} else {
-//		SharedPtr<Transaction> pTrans = trans.cast<Transaction>();
-//		if (!pTrans.isNull()) {
-//			pTrans->getBatch()->Put(key, value);
-//			return 0;
-//		}
-//		return -1;
-//	}
+
 	if (s.ok()) {
 		return 0;
 	}
@@ -201,16 +192,7 @@ int32_t SimpleLevelStorage::_remove( void* aKey, int aKeyLen) {
 	leveldb::Slice key((const char*)aKey, aKeyLen);
 	leveldb::Status s;
         s = _db->Delete(leveldb::WriteOptions(), key);
-//	if (trans.isNull()) {
-//		
-//	} else {
-//		SharedPtr<Transaction> pTrans = trans.cast<Transaction>();
-//		if (!pTrans.isNull()) {
-//			pTrans->getBatch()->Delete(key);
-//			return 0;
-//		}
-//		return -1;
-//	}
+
 	if (s.ok()) {
 		return 0;
 	}

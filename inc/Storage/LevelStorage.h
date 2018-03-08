@@ -13,17 +13,29 @@
 #include <Hashing/DefaultHasher.h>
 
 namespace openstars { namespace storage {
+
+//partitioned leveldb storage 
+    
 class LevelStorage : public AbstractKVStorage {
 public:
 	typedef openstars::hashing::DefaultHasher HasherType;
 	class Cursor;
 public:
+/**
+ * Hash based partitioned LevelDb
+ * 
+ * @param dbString Storage config string
+ * @example 
+ * path=/tmp/leveldb,baseName=test,partitions=1
+ * 
+ * Default param values if omitted: path = /tmp/leveldb, baseName = test, dbType empty, partitions = 1, dbOptions empty
+ */
 	LevelStorage(const std::string& dbString);
 	virtual ~LevelStorage();
 	
-	virtual void close();
-	
 	virtual bool open();
+	
+	virtual void close();
 	
 	/**
 	 * Get Cursor to iterate through data
@@ -56,6 +68,8 @@ protected:
 	std::vector<SharedPtr<SimpleLevelStorage> > _dbParts;
 	size_t _partitionMask;
 };
+
+typedef LevelStorage LevelDBStorage;
 
 }}	//namespace
 

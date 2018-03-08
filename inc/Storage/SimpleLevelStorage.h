@@ -28,7 +28,7 @@ class SimpleLevelStorage : public AbstractKVStorage {
 
 public:
 
-	SimpleLevelStorage() {
+	SimpleLevelStorage():_path(), _db(nullptr), _isOpen(false) {
 	}
 	SimpleLevelStorage(const std::string& path);
 	virtual ~SimpleLevelStorage();

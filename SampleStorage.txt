@@ -1,3 +1,5 @@
+#supported open: remote, kc, leveldb, bigset 
+
 name=bigset,type=bigset,host=127.0.0.1,port=18403,readable=true,writable=true
 name=bigset,type=bigset,bigsetid=1,host=127.0.0.1,port=18403,readable=true,writable=true
 Todo: auto open new db
