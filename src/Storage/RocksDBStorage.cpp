@@ -65,6 +65,7 @@ bool RocksDBStorage::open(){
                     aPath = aValue;
                 if (aName == ("compression") )
                 {
+                    if (aValue =="nc") rdbopts.compression = rocksdb::kNoCompression;
                     if (aValue =="snappy") rdbopts.compression = rocksdb::kSnappyCompression;
                     if (aValue =="zlib") rdbopts.compression = rocksdb::kZlibCompression;
                     if (aValue =="bz2") rdbopts.compression = rocksdb::kBZip2Compression;
