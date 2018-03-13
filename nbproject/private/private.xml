@@ -19,9 +19,6 @@
         <group name="BigSetKV_v2">
             <file>file:/data/data/workspace_2015/corelibs/UPStorage/SampleStorage.txt</file>
         </group>
-        <group name="Trades">
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/src/Storage/FixedSizeSharedMemTable.cpp</file>
-            <file>file:/data/data/src/cpp/hcore2017/corelibs/OpenStorage/inc/Storage/FixedSizeSharedMemTable.h</file>
-        </group>
+        <group name="Trades"/>
     </open-files>
 </project-private>

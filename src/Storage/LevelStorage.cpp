@@ -187,7 +187,7 @@ SharedPtr<AbstractCursor> LevelStorage::iterate() {
 }
 
 LevelStorage::Cursor::Cursor(std::vector<SharedPtr<SimpleLevelStorage> >& parts) 
-: _partitions(parts), partitionIndex(0)
+:  partitionIndex(0), _currentCursor(), _partitions(parts)
 {
 	_currentCursor = _partitions[partitionIndex]->iterate();
 }
