@@ -8,13 +8,12 @@
 #include "Storage/KVStorageFactory.h"
 #include "Storage/KCStorage.h"
 #include "Storage/LevelStorage.h"
-//#include "Storage/ZDB2Storage.h"
 #include "Storage/RemoteKVStorage.h"
 #include "Storage/DistributedStorage.h"
 #include "Storage/SharedMemStorage.h"
 #include "Storage/FixedSizeSharedMemTable.h"
 #include "Storage/BigsetRemoteKV.h"
-//#include "Storage/ManagedIFlatStorage.h"
+#include "Storage/SnappyKVStorage.h"
 
 
 #include "Distributed/RepBackendManager.h"
@@ -43,31 +42,7 @@ KVStorageFactory::~KVStorageFactory() {
 
 class KVStorageFactoryImpl{
 public:
-//    static openstars::storage::AbstractKVStorage* createManagedIFlat( std::map < std::string, std::string> & aOptions){
-//
-//        cout<<"prepare creating ManagedIFlatStorage "<<endl;
-//        
-//        size_t blockSize = Poco::NumberParser::parse(aOptions["blocksize"]);
-//        size_t maxNumStorage = Poco::NumberParser::parse(aOptions["numactivedb"]);
-//        bool isStupid = Poco::NumberParser::parseBool(aOptions["stupid"]);
-//	std::string dbPath = aOptions["dbpath"];
-//	std::string dbName = aOptions["dbname"];
-//        size_t partitions = Poco::NumberParser::parse(aOptions["partitions"]);
-//        bool appendOnly = Poco::NumberParser::parseBool(aOptions["appendonly"]);
-//        int32_t reservedSize = Poco::NumberParser::parse(aOptions["reservedsize"]);
-//
-//        cout<<"creating ManagedIFlatStorage "<<endl;
-//
-//        openstars::storage::ManagedIFlatStorage* aDb = new openstars::storage::ManagedIFlatStorage(
-//                blockSize, maxNumStorage, isStupid, 
-//                dbPath, dbName, ".flat", 
-//                partitions, appendOnly, reservedSize );
-//	
-//
-//        cout<<" create ok "<<endl;
-//	
-//	return aDb;
-//    }
+
     
     static openstars::storage::AbstractKVStorage* createBigsetRemote( std::map < std::string, std::string> & aOptions){
         std::string aHost = aOptions["host"];
@@ -116,156 +91,6 @@ public:
 	return aDb;
     }
     
-//    static openstars::storage::AbstractKVStorage* createZDB2( std::map < std::string, std::string> & aOptions){
-//        
-//        int numPartition = 1;
-//        
-//        if (aOptions["partitions"] != "")
-//            numPartition = Poco::NumberParser::parse(aOptions["partitions"] );
-//        
-//        
-//        std::string zdb2Dir = aOptions[ "env"];
-//        std::string zdb2Name =  aOptions["dbname"] ; //file name
-//        if (zdb2Dir == "" || zdb2Name == "")
-//            return NULL;
-//        
-//        
-//        std::string zdb2TableType = aOptions["tabletype"]; // file name
-//        if (zdb2TableType=="")
-//            zdb2TableType = "I64GTable";
-//
-//        int zdb2AppendOnly = 0;
-//        if (aOptions["appendonly"] != "")
-//            zdb2AppendOnly = Poco::NumberParser::parse(aOptions["appendonly"]);
-//        
-//        int zdb2ReservedSize = 1024;
-//        if (aOptions["reservedsize"] != "")
-//            zdb2ReservedSize = Poco::NumberParser::parse(aOptions["reservedsize"]);
-//
-//
-//
-//        openstars::storage::ZDB2Storage* pZDB2 = new openstars::storage::ZDB2Storage(
-//                    zdb2Dir
-//                    , zdb2Name
-//                    ,".zdb2"
-//                    , numPartition
-//                    , true );
-//
-//        pZDB2->autoOpen(zdb2TableType);
-//
-//        pZDB2->set_params(zdb2AppendOnly, zdb2ReservedSize);
-//        cout<<"appendonly:"<<zdb2AppendOnly<<endl;
-//        
-//        return pZDB2;
-//    }
-    
-//    static openstars::storage::AbstractKVStorage* createIFlat( std::map < std::string, std::string> & aOptions){
-//        
-//        int numPartition = 1;
-//        
-//        if (aOptions["partitions"] != "")
-//            numPartition = Poco::NumberParser::parse(aOptions["partitions"] );
-//        
-//        
-//        std::string env = aOptions[ "env"];
-//        std::string dbName =  aOptions["dbname"] ; //file name
-//        if (env == "" || dbName == "")
-//            return NULL;
-//        
-//        
-//        int appendOnly = 0;
-//        if (aOptions["appendonly"] != "")
-//            appendOnly = Poco::NumberParser::parse(aOptions["appendonly"]);
-//
-//        int useMem = 0;
-//        if (aOptions["usemem"] != "")
-//            useMem = Poco::NumberParser::parse(aOptions["usemem"]);
-//
-//        int reservedSize = 1024;
-//        if (aOptions["reservedsize"] != "")
-//            reservedSize = Poco::NumberParser::parse(aOptions["reservedsize"]);
-//
-//	Poco::Int64 minItem = 0;
-//        if (aOptions["offset"] != "")
-//            minItem = Poco::NumberParser::parse64(aOptions["offset"]);
-//	
-//	Poco::Int64 maxNumItem = 100000000;
-//        if (aOptions["maxItems"] != "")
-//            maxNumItem = Poco::NumberParser::parse64(aOptions["maxItems"]);
-//
-//
-//        openstars::storage::IFlatStorage* pDB = new openstars::storage::IFlatStorage(
-//		env
-//		, dbName
-//		,".flat"
-//		, numPartition
-//		, minItem
-//		, maxNumItem
-//		, appendOnly
-//		, reservedSize
-//                , useMem
-//		);
-//
-//        pDB->open();
-//
-//        cout<<"appendonly:"<<appendOnly<<endl;
-//        
-//        return pDB;
-//    }
-    
-    
-//    static openstars::storage::AbstractKVStorage* createSmartIFlat( std::map < std::string, std::string> & aOptions){
-//        
-//        int numPartition = 1;
-//        
-//        if (aOptions["partitions"] != "")
-//            numPartition = Poco::NumberParser::parse(aOptions["partitions"] );
-//        
-//        
-//        std::string env = aOptions[ "env"];
-//        std::string dbName =  aOptions["dbname"] ; //file name
-//        if (env == "" || dbName == "")
-//            return NULL;
-//        
-//        
-//        int appendOnly = 0;
-//        if (aOptions["appendonly"] != "")
-//            appendOnly = Poco::NumberParser::parse(aOptions["appendonly"]);
-//
-////        int useMem = 0;
-////        if (aOptions["usemem"] != "")
-////            useMem = Poco::NumberParser::parse(aOptions["usemem"]);
-//
-//        int reservedSize = 1024;
-//        if (aOptions["reservedsize"] != "")
-//            reservedSize = Poco::NumberParser::parse(aOptions["reservedsize"]);
-//
-//	Poco::Int64 minItem = 0;
-//        if (aOptions["offset"] != "")
-//            minItem = Poco::NumberParser::parse64(aOptions["offset"]);
-//	
-//	Poco::Int64 maxNumItem = 100000000;
-//        if (aOptions["maxItems"] != "")
-//            maxNumItem = Poco::NumberParser::parse64(aOptions["maxItems"]);
-//
-//
-//        openstars::storage::SmartIflatStorage* pDB = new openstars::storage::SmartIflatStorage(
-//		env
-//		, dbName
-//		,".flat"
-//		, numPartition
-//		, minItem
-//		, maxNumItem
-//		, appendOnly
-//		, reservedSize                    
-//		);
-//
-//        pDB->open();
-//
-//        cout<<"appendonly:"<<appendOnly<<endl;
-//        
-//        return pDB;
-//    }    
     
     static openstars::storage::AbstractKVStorage* createKC(const std::string & aOptions){
         openstars::storage::KCStorage* aDb = new openstars::storage::KCStorage(aOptions);
@@ -430,7 +255,49 @@ private:
 // khai báo biến static lưu trữ ánh xạ từ key sang BackendManager 
 std::map< std::string , Poco::SharedPtr< openstars::distributed::BackendManager > > KVStorageFactoryImpl::backendManagers;
 
-openstars::storage::AbstractKVStorage* KVStorageFactory::createStorage(const std::string& creatingOption , std::string& name , int& rwmode ){
+openstars::storage::AbstractKVStorage* createKVStorageByType(const std::string& aType, 
+        std::map < std::string, std::string>& aMap, const std::string& creatingOption)
+{
+
+    if (aType == "")
+        return NULL;
+    
+    if (aType =="remote"){
+        return KVStorageFactoryImpl::createRemote(aMap);
+    }
+    
+    if (aType == "bigset")
+    {
+        return KVStorageFactoryImpl::createBigsetRemote(aMap);
+    }
+    
+    if (aType == "kc"){
+        return KVStorageFactoryImpl::createKC(creatingOption);
+    }
+	
+    if (aType == "leveldb"){
+        return KVStorageFactoryImpl::createLevelStorage(creatingOption);
+    }
+    
+    if (aType == "rocksdb"){
+        return KVStorageFactoryImpl::createRocksdbStorage(creatingOption);
+    }
+        
+    if (aType == "distributed")
+	return KVStorageFactoryImpl::createDistributed(aMap);
+
+    if (aType == "filemapping")
+	return KVStorageFactoryImpl::createFileMapping(aMap);
+    
+    if (aType == "shm")
+	return KVStorageFactoryImpl::createSHM(aMap);
+
+    if (aType == "smartshmmapping" || aType == "smartshm")
+	return KVStorageFactoryImpl::createSmartSHMMapping(aMap);    
+}
+
+openstars::storage::AbstractKVStorage* KVStorageFactory::createStorage(
+    const std::string& creatingOption , std::string& name , int& rwmode ){
     Poco::StringTokenizer aStk(creatingOption, ",", Poco::StringTokenizer::TOK_TRIM);
     
     /*Put options to map*/
@@ -457,54 +324,12 @@ openstars::storage::AbstractKVStorage* KVStorageFactory::createStorage(const std
         }
     }
     
-    if (aType == "")
-        return NULL;
+    openstars::storage::AbstractKVStorage* aStorage 
+            = createKVStorageByType (aType, aMap, creatingOption);
+    if (aMap["snappykv"]=="true" || aMap["snappywrapper"]=="true" )
+        aStorage = new openstars::storage::SnappyKVStorage(aStorage);
     
-    if (aType =="remote"){
-        return KVStorageFactoryImpl::createRemote(aMap);
-    }
-    
-    if (aType == "bigset")
-    {
-        return KVStorageFactoryImpl::createBigsetRemote(aMap);
-    }
-//    if (aType == "automanagedflat")
-//        return  KVStorageFactoryImpl::createManagedIFlat(aMap);
-    
-//    if (aType == "zdb2"){
-//        return KVStorageFactoryImpl::createZDB2(aMap);
-//    }
-    
-    if (aType == "kc"){
-        return KVStorageFactoryImpl::createKC(creatingOption);
-    }
-	
-    if (aType == "leveldb"){
-        return KVStorageFactoryImpl::createLevelStorage(creatingOption);
-    }
-    
-    if (aType == "rocksdb"){
-        return KVStorageFactoryImpl::createRocksdbStorage(creatingOption);
-    }
-        
-    if (aType == "distributed")
-	return KVStorageFactoryImpl::createDistributed(aMap);
-
-    if (aType == "filemapping")
-	return KVStorageFactoryImpl::createFileMapping(aMap);
-    
-    if (aType == "shm")
-	return KVStorageFactoryImpl::createSHM(aMap);
-
-    if (aType == "smartshmmapping" || aType == "smartshm")
-	return KVStorageFactoryImpl::createSmartSHMMapping(aMap);
-
-//    if (aType == "iflat")
-//	return KVStorageFactoryImpl::createIFlat(aMap);
-//    if (aType == "smartiflat")
-//	return KVStorageFactoryImpl::createSmartIFlat(aMap);
-    
-    return NULL;
+    return aStorage;
     
 }
 

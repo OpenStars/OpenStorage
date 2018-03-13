@@ -195,7 +195,7 @@ SharedPtr<AbstractCursor> KCStorage::iterate() {
 }
 
 KCStorage::Cursor::Cursor(vector<SharedPtr<SimpleKCStorage> >& parts) 
-: _partitions(parts), partitionIndex(0)
+:partitionIndex(0), _currentCursor(), _partitions(parts) 
 {
 	_currentCursor = _partitions[partitionIndex]->iterate();
 }
