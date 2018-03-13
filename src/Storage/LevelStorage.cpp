@@ -213,4 +213,4 @@ bool LevelStorage::Cursor::next(std::string& aKey, std::string& aVal) {
 	return false;
 }
 
-}}
+} }
