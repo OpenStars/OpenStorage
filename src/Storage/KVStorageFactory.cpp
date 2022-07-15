@@ -328,7 +328,7 @@ openstars::storage::AbstractKVStorage* KVStorageFactory::createStorage(
             = createKVStorageByType (aType, aMap, creatingOption);
     if (aMap["snappykv"]=="true" || aMap["snappywrapper"]=="true" )
         aStorage = new openstars::storage::SnappyKVStorage(aStorage);
-    
+    cout<<"OpenStorage created "<<aType<<endl;
     return aStorage;
     
 }

@@ -12,6 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>TStorageMonitorThriftHander_openstorage.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="f3" displayName="Storage" projectFiles="true">
       <logicalFolder name="f5" displayName="KeyValue" projectFiles="true">
@@ -111,6 +112,7 @@
             <pElem>../../contribs/SpecialContribs/include/kyotocabinet</pElem>
             <pElem>../../contribs/SpecialContribs/include/leveldb</pElem>
             <pElem>../../contribs/SpecialContribs/src/</pElem>
+            <pElem>../../corelibs/BaseFoundation/thrift/gen-cpp</pElem>
             <pElem>../../corelibs/BaseFoundation/include</pElem>
           </incDir>
           <preprocessorList>
@@ -125,6 +127,11 @@
         </archiverTool>
       </compileType>
       <item path="SampleStorage.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TStorageMonitorThriftHander_openstorage.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="inc/Storage/BigsetRemoteKV.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -257,6 +264,7 @@
             <pElem>../../contribs/SpecialContribs/include/kyotocabinet</pElem>
             <pElem>../../contribs/SpecialContribs/include/leveldb</pElem>
             <pElem>../../contribs/SpecialContribs/src/</pElem>
+            <pElem>../../corelibs/BaseFoundation/thrift/gen-cpp</pElem>
             <pElem>../../corelibs/BaseFoundation/include</pElem>
           </incDir>
           <preprocessorList>
@@ -278,6 +286,11 @@
         </archiverTool>
       </compileType>
       <item path="SampleStorage.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TStorageMonitorThriftHander_openstorage.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="inc/Storage/BigsetRemoteKV.h" ex="false" tool="3" flavor2="0">
       </item>
