@@ -1,29 +1,27 @@
 /* 
- * File:   DistributedStorage.h
- * Author: trungthanh
+ * File:   MongoStorage.h
+ * Author: sonlh
  *
- * Created on March 26, 2013, 11:14 PM
+ * Created on Jan 1, 2025, 11:14 PM
  */
 
-#ifndef DISTRIBUTEDSTORAGE_H
-#define	DISTRIBUTEDSTORAGE_H
+#ifndef MONGOSTORAGE_H
+#define	MONGOSTORAGE_H
 
 #include "Storage/AbstractKVStorage.h"
 #include <string>
-#include "Distributed/BackendManager.h"
 
 //Todo: using nonblocking client socket.
 namespace openstars { namespace storage{
 
-//Remote KV Storage using BackendManager for managing host/port 
-//we can use this for consistent hash writing/ reading 
-class DistributedStorage : public openstars::storage::AbstractKVStorage
+
+class MongoStorage : public openstars::storage::AbstractKVStorage
 {
 public:
-    DistributedStorage(openstars::distributed::BackendManager* backendMngr);
-    virtual ~DistributedStorage();
+    MongoStorage();
+    virtual ~MongoStorage();
 private:
-    DistributedStorage(const DistributedStorage& orig);
+    MongoStorage(const MongoStorage& orig);
     
 public:
     /*
@@ -53,9 +51,8 @@ protected:
     int32_t _remove(const KType &key);
     
 protected:
-    openstars::distributed::BackendManager* _backendMngr;
 };
 
 } }
-#endif	/* DISTRIBUTEDSTORAGE_H */
+#endif	/* MongoStorage_H */
 

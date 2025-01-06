@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "inc",
+                "../../contribs/LibEvent/include",
+                "../../contribs/Poco/include",
+                "../../contribs/ApacheThrift/include",
+                "../../contribs/SpecialContribs/include",
+                "../../corelibs/BaseFoundation/include",
+                "../../corelibs/BaseFoundation/thrift/gen-cpp"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

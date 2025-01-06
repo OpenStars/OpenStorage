@@ -1,3 +1,4 @@
 .hg
 ./build
 .tmp
+/build/
