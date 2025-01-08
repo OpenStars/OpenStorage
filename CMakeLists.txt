@@ -34,6 +34,7 @@ add_definitions(
 
 # Source files
 set(SOURCES
+    src/Storage/MongoStorage.cpp
     src/Storage/BigsetRemoteKV.cpp
     src/Storage/DistributedStorage.cpp
     src/Storage/FixedSizeSharedMemTable.cpp
@@ -55,6 +56,7 @@ set(SOURCES
 
 # Header files
 set(HEADERS
+    inc/Storage/MongoStorage.h
     inc/Storage/BigsetRemoteKV.h
     inc/Storage/DistributedStorage.h
     inc/Storage/FixedSizeSharedMemTable.h

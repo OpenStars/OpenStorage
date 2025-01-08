@@ -70,6 +70,12 @@
         "cfenv": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "any": "cpp",
+        "cuchar": "cpp",
+        "filesystem": "cpp",
+        "scoped_allocator": "cpp",
+        "valarray": "cpp",
+        "*.ipp": "cpp"
     }
 }
